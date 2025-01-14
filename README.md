@@ -1,3 +1,10 @@
-# testshop 23r23 r23r
+# Test Shop PHP Example
 
-wfqwfqwf 4 334  3434  34
+To setup database connection enter your credentials into "init.php" file:
+
+define(DB_HOST, 'localhost');
+define(DB_USER, 'root');
+define(DB_PASS, '');
+define(DB_NAME, 'testshop');
+
+And then run "db_resrart.php" it will reset tables and demo data in database
