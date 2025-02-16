@@ -1,9 +1,9 @@
 <?php
 
-define(DB_HOST, 'localhost');
-define(DB_USER, 'root');
-define(DB_PASS, '');
-define(DB_NAME, 'testshop');
+define('DB_HOST', 'localhost');
+define('DB_USER', 'root');
+define('DB_PASS', '');
+define('DB_NAME', 'testshop');
 
 session_start();
 
@@ -128,7 +128,7 @@ switch ($_REQUEST['action']) {
 				}
 			}
 			
-			db_query("INSERT INTO orders SET order_date=NOW(), order_items='".db_escape(json_encode($cart_products))."', order_total='".(float)$total_price."'");
+			db_query("INSERT INTO orders SET order_date=NOW(), order_items='".db_escape(json_encode($cart_products, JSON_UNESCAPED_UNICODE))."', order_total='".(float)$total_price."'");
 			$order_id = db_load_field_array("SELECT LAST_INSERT_ID()");
 			$order_id = $order_id[0];	
 			

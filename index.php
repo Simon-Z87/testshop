@@ -24,7 +24,7 @@ $pages = floor($count / $limit);
 		<tr>
 			<td><h1>Каталог</h1></td>
 			<td align="right">
-				<a href="cart.php">Корзина (<?php echo count($_SESSION['CART']); ?>)</a><br />
+				<a href="cart.php">Корзина (<?php echo $_SESSION['CART'] ? count($_SESSION['CART']) : 0; ?>)</a><br />
 				<a href="orders.php">Заказы</a>
 			</td>
 		</tr>
